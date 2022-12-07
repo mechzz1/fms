@@ -1,0 +1,15 @@
+.btn {
+  border-radius: 10px;
+}
+/* .hov:hover { 
+  color: white; 
+  border-radius: 6%;
+  color: black;} */
+  
+  ::ng-deep.buttonHover{
+   border-radius: 5px !important;
+  }
+  ::ng-deep.buttonHover:hover{
+    color: black !important;
+    background-color: white !important;
+  }

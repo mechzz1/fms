@@ -1,0 +1,257 @@
+<div class="area">
+
+
+
+      <div [ngClass]="this.lockFlag == false ? 'container' : 'container con-pad'">
+            <div class="row pb-2 mt-4">
+                  <div class="col-md-6 col-sm-6 d-flex i-size">
+                        
+                        <i class="{{this.icon}}" style="margin-top: -3px;"></i>
+
+                        <h3 class="title">
+                              {{this.title}}
+                        </h3>
+
+                  </div>
+                  <div class="col-md-4 col-sm-4 text-end time">
+                        {{ dateTime | date:'h:mm a' }}
+                  </div>
+                  <div class="col-md-2 col-sm-2 text-end ">
+                        <div class="d-flex justify-content-end">
+                              <div class="pr-3 header-icon icon-size ">
+
+                                    <i class="fal fa-building " (click)="op.toggle($event)"></i>
+                                    <p-overlayPanel #op>
+                                          <ng-template pTemplate>
+                                                <div class="overlay-body">
+                                                      <div class="text-center overlay-bg">
+                                                            <h5>Business</h5>
+                                                      </div>
+                                                      <div class="container">
+                                                            <ul>
+                                                                
+                                                                  <li class="pb-3">
+                                                                        <p-inputSwitch  [(ngModel)]="checked"></p-inputSwitch>
+                                                                        <span class="pl-5">All</span>
+                                                                  </li>
+                                                              
+                                                            </ul>
+                                                      </div>
+                                                </div>
+                                          </ng-template>
+                                    </p-overlayPanel>
+                              </div>
+                              <div class="pr-3 header-icon icon-size">
+
+                                    <i class="fas fa-globe-europe" (click)="op1.toggle($event)"></i>
+                                    <p-overlayPanel #op1>
+                                          <ng-template pTemplate>
+                                                <div class="overlay-body">
+                                                      <div class="text-center overlay-bg">
+                                                            <h5>Site</h5>
+                                                      </div>
+
+                                                </div>
+                                          </ng-template>
+                                    </p-overlayPanel>
+                              </div>
+                              <div class="header-icon icon-size">
+
+                                    <i class="far fa-bell" (click)="op2.toggle($event)"></i>
+                                    <p-overlayPanel #op2>
+                                          <ng-template pTemplate>
+                                                <div class="overlay-body">
+                                                      <div class="text-center overlay-bg">
+                                                            <h5>Notification</h5>
+                                                      </div>
+                                                </div>
+                                          </ng-template>
+                                    </p-overlayPanel>
+                              </div>
+                        </div>
+
+
+
+                  </div>
+            </div>
+            <router-outlet></router-outlet>
+      </div>
+</div>
+<nav [ngClass]="this.lockFlag == false ? 'main-menu' : 'nav-fix main-menu logoProp'">
+      <div class="text-end nav-lock">
+            <a *ngIf="!this.lockFlag" (click)="navLock()">
+                  <i class="fal fa-lock-open"></i>
+            </a>
+            <a *ngIf="this.lockFlag" (click)="navLock()">
+                  <i class="fal fa-lock"></i>
+            </a>
+      </div>
+      <div class="profile">
+            <img src="https://1.bp.blogspot.com/-vhmWFWO2r8U/YLjr2A57toI/AAAAAAAACO4/0GBonlEZPmAiQW4uvkCTm5LvlJVd_-l_wCNcBGAsYHQ/s16000/team-1-2.jpg"
+                  alt="profile_picture">
+            <h3>Anamika Roy</h3>
+            <p>Designer</p>
+      </div>
+      <ul>
+            <li [ngClass]="
+                  this.router.url == '/admin/dashboard' ? 'active' : ''
+                ">
+                  <a routerLink="dashboard" (click)="headerNameIcon('DashBoard','fass fa fa-home fa-2x')">
+                        <i class="fass fa fa-home fa-2x"></i>
+                        <span class="nav-text">
+                              Dashboard
+                        </span>
+                  </a>
+
+            </li>
+            <li [ngClass]="
+                  this.router.url == '/admin/user' ? 'active' : ''
+                ">
+                  <a routerLink="user" (click)="headerNameIcon('User Registration','fass fa fa-user fa-2x')">
+                        <i class="fass fa fa-user fa-2x"></i>
+                        <span class="nav-text">
+                              User
+                        </span>
+                  </a>
+
+            </li>
+            <li [ngClass]="
+            this.router.url == '/admin/vehicle' ? 'active' : ''
+          ">
+            <a routerLink="vehicle" (click)="headerNameIcon('Vehicle Registration','fass fa fa-truck fa-2x')">
+                  
+                  <i class="fass fa fa-truck fa-2x"></i>
+                  
+                  <span class="nav-text">
+                        Vehicle
+                  </span>
+            </a>
+
+         
+
+      </li>
+      <li [ngClass]="
+      this.router.url == '/admin/vehicle-allocation' ? 'active' : ''
+    ">
+      <a routerLink="vehicle-allocation" (click)="headerNameIcon('Vehicle Allocation','fass fa fa-truck fa-2x')">
+            
+            <i class="fass fa fa-truck fa-2x"></i>
+            
+            <span class="nav-text">
+                  Vehicle Allocation
+            </span>
+      </a>
+
+   
+
+</li>
+      <li [ngClass]="
+      this.router.url == '/admin/job' ? 'active' : ''
+    ">
+      <a routerLink="job" (click)="headerNameIcon('Job','fass fas fa-tasks fa-2x')">
+            
+            <i class="fass fas fa-tasks fa-2x"></i>
+            
+            <span class="nav-text">
+                  Job
+            </span>
+      </a>
+
+
+</li>
+<li [ngClass]="
+this.router.url == '/admin/assign-job' ? 'active' : ''
+">
+<a routerLink="assign-job" (click)="headerNameIcon('Job','fa fa-tasks')">
+      
+      <i class="fa fa-tasks"></i>
+      
+      <span class="nav-text">
+            Assign Job
+      </span>
+</a>
+
+
+
+</li>
+         
+            <!-- <li class="has-subnav">
+                  <a href="#">
+                        <i class="fa fa-laptop fa-2x"></i>
+                        <span class="nav-text">
+                              Stars Components
+                        </span>
+                  </a>
+
+            </li> -->
+          <!--   <li class="has-subnav">
+                  <a href="#">
+                        <i class="fa fa-list fa-2x"></i>
+                        <span class="nav-text">
+                              Forms
+                        </span>
+                  </a>
+
+            </li>
+            <li class="has-subnav">
+                  <a href="#">
+                        <i class="fa fa-folder-open fa-2x"></i>
+                        <span class="nav-text">
+                              Pages
+                        </span>
+                  </a>
+
+            </li>
+            <li>
+                  <a href="#">
+                        <i class="fa fa-bar-chart-o fa-2x"></i>
+                        <span class="nav-text">
+                              Graphs and Statistics
+                        </span>
+                  </a>
+            </li>
+            <li>
+                  <a href="#">
+                        <i class="fa fa-font fa-2x"></i>
+                        <span class="nav-text">
+                              Quotes
+                        </span>
+                  </a>
+            </li>
+            <li>
+                  <a href="#">
+                        <i class="fa fa-table fa-2x"></i>
+                        <span class="nav-text">
+                              Tables
+                        </span>
+                  </a>
+            </li>
+            <li>
+                  <a href="#">
+                        <i class="fa fa-map-marker fa-2x"></i>
+                        <span class="nav-text">
+                              Maps
+                        </span>
+                  </a>
+            </li>
+            <li>
+                  <a href="#">
+                        <i class="fa fa-info fa-2x"></i>
+                        <span class="nav-text">
+                              Documentation
+                        </span>
+                  </a>
+            </li> -->
+      </ul>
+
+      <ul class="logout">
+            <li>
+                  <a href="#">
+                        <i class="fa fa-power-off fa-2x"></i>
+                        <span class="nav-text">
+                              Logout
+                        </span>
+                  </a>
+            </li>
+      </ul>
+</nav>

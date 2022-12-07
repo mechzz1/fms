@@ -1,0 +1,33 @@
+::ng-deep.p-buttonset .p-button:first-of-type {
+  border-top-right-radius: 0;
+  width: 500px;
+  border-bottom-right-radius: 0;
+}
+::ng-deep.p-buttonset .p-button:not(:first-of-type):not(:last-of-type) {
+  width: 500px;
+  border-radius: 0;
+}
+::ng-deep.p-buttonset .p-button:last-of-type {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  width: 500px;
+}
+::ng-deep.p-selectbutton .p-button:focus.p-highlight {
+  background: #53a3f6;
+  border-color: #53a3f6;
+}
+::ng-deep.p-selectbutton .p-button:not(.p-disabled):not(.p-highlight):hover {
+  background: #bbd9fa;
+  border-color: rgba(0, 0, 0, 0.12);
+  color: rgba(0, 0, 0, 0.87);
+}
+::ng-deep.p-selectbutton .p-button.p-highlight {
+  background: #bbd9fa;
+  border-color: #bbd9fa;
+  color: rgba(0, 0, 0, 0.87);
+}
+::ng-deep.p-selectbutton .p-button.p-highlight:hover {
+  background: #53a3f6;
+  border-color: #53a3f6;
+  color: rgba(0, 0, 0, 0.87);
+}

@@ -1,0 +1,45 @@
+<p-dialog
+  [modal]="true"
+  [(visible)]="openDialog"
+  [breakpoints]="{ '960px': '50vw', '640px': '75vw' }"
+  [style]="{ width: '35vw' }"
+  [draggable]="false"
+  [resizable]="false"
+  [closeOnEscape]="false"
+  *ngIf="this.type == 'sms'"
+>
+  <div class="modal-content modalpayment">
+    <div class="modal-header">
+      <h5 class="modal-title">Save as Template</h5>
+      <button
+        type="button"
+        class="close"
+        data-bs-dismiss="modal"
+        aria-label="Close"
+        (click)="closeModal()"
+      >
+        <img src="assets/close.png" alt="" />
+      </button>
+    </div>
+    <div class="modal-body">
+      <span class="label">{{ this.inputInfo.label }}</span>
+      <app-text-box
+        [inputInfo]="this.inputInfo"
+        [changeFlag]="this.changeFlag"
+        *ngIf="this.inputInfo && this.inputInfo.type == 'text2'"
+        (updateData)="saveData($event)"
+      >
+      </app-text-box>
+      <div class="row justify-content-center">
+        <div class="col-md-4 col-lg-4 col-xl-3">
+          <app-button
+            [label]="'Submit'"
+            [bgColor]="'#55A8FD'"
+            [color]="'#ffff'"
+            (button)="onSubmit()"
+          ></app-button>
+        </div>
+      </div>
+    </div>
+  </div>
+</p-dialog>

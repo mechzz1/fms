@@ -1,0 +1,47 @@
+<div class="container bg" style="min-height: 50vh ;">
+      <div class="row">
+                  <div class="col-md-6" *ngFor="let box of this.inputInfo">   
+                        <label class="label lable-font" *ngIf="box.type == 'drop'">{{
+                              box.label | capitalization
+                            }}</label>  
+                        <app-drop-down
+                        [inputInfo]="box" 
+                        *ngIf="box.type == 'drop'"
+                         [changeFlag]="this.changeFlag"
+                        [data] ="box.data"
+                        (updateData)="updateData($event, box.modelName)"
+                        (preSubmit)="preSubmit()"
+                        (submit)="onSubmit()"
+                        [scrollHeight] = "'240px'"
+                        >
+      
+                        </app-drop-down> 
+                  </div>    
+            <div class="row pt-2">
+                  <div class="col-md-12">
+                    <div class="row justify-content-end">
+                      <div class="col-md-2">
+                        <app-button
+                        [label]="'Assign Vehicle'"
+                        [padding]="'5px 0'"
+                        [borderRadius]="'0px'"
+                        [color]="'#fff'"
+                        [type]="'login'"
+                        [bgColor]="'#2c3349'"
+                        [fontSize]="'14px'"
+                        (button)="preSubmit()"
+      
+      
+                      >
+                      </app-button>
+                      </div>
+                    </div>
+                  
+                      
+                  </div>
+                
+                
+            </div>
+           
+      </div>
+</div>

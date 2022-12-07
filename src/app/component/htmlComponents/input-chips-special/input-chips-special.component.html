@@ -1,0 +1,28 @@
+<!-- <div ngbDropdown> -->
+<p-chips
+  [formControl]="this.formControl"
+  ngDefaultControl
+  placeholder="{{ this.inputInfo.placeHolder | capitalization }}"
+></p-chips>
+<small id="username2-help" class="p-error" *ngIf="this.formControl.dirty">{{
+  getError()
+}}</small>
+<!-- <div ngbDropdownMenu aria-labelledby="dropdownBasic3" class="menus">
+     <p *ngIf="!this.data">
+      <i class="fas fa-chalkboard-teacher"></i>Loading...
+    </p>
+    <p *ngIf="this.data">
+      <i class="fas fa-tachometer-alt"></i> {{ this.data }}
+    </p>
+ <p><i class="fas fa-calendar-check"></i> My Appointments</p>
+    <p><i class="fas fa-heart"></i> Favorites</p>
+    <p><i class="fab fa-buffer"></i> My tutoring offerings</p>
+    <p><i class="fas fa-award"></i> Career</p>
+    <p><i class="fas fa-wallet"></i> Wallet</p>
+    <p><i class="fas fa-user-cog"></i> Account Settings</p>
+    <p><i class="fas fa-sign-out-alt"></i>Logout</p> 
+  </div>
+</div>
+ <small id="username2-help" class="p-error" *ngIf="this.formControl.dirty">{{
+  getError()
+}}</small> -->

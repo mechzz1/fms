@@ -1,0 +1,41 @@
+<!-- <div class="row justify-content-center mt-3">
+  <div class="col-md-12">
+    <h5>{{ this.inputInfo.label | capitalization }}</h5>
+    <p-multiSelect
+      [options]="data"
+      [formControl]="formControl"
+      defaultLabel="{{ this.inputInfo.placeHolder }} "
+      optionLabel="name"
+      [virtualScroll]="true"
+      display="chip"
+      class="p-multiSelect"
+    ></p-multiSelect>
+  </div>
+</div>
+<small id="username2-help" class="p-error" *ngIf="this.formControl.dirty">{{
+  getError()
+}}</small> -->
+<div class="row justify-content-center mt-2">
+  <div class="col-md-12">
+    <p-multiSelect
+      [options]="data"
+      [formControl]="formControl"
+      defaultLabel="{{ this.inputInfo.placeHolder }}"
+      optionLabel="name"
+      display="chip"
+      class="p-multiSelect"
+      showHeader="false"
+      ><ng-template class="list" pTemplate="selecteDItem">
+        adfadfsd
+      </ng-template>
+      <ng-template let-country pTemplate="item" class="list">
+        <div class="country-item">
+          <div>{{ country.name }}</div>
+        </div>
+      </ng-template></p-multiSelect
+    >
+  </div>
+</div>
+<small id="username2-help" class="p-error" *ngIf="this.formControl.dirty">{{
+  getError()
+}}</small>

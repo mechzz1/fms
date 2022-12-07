@@ -1,0 +1,77 @@
+
+<div class="container bg">
+      <div class="row">
+                       <div class="col-md-5" *ngFor="let box of this.inputInfo">
+                        <label class="label lable-font" *ngIf="box.type == 'drop'">{{
+                              box.label | capitalization
+                            }}</label>  
+                        <app-drop-down
+                        [inputInfo]="box" 
+                        *ngIf="box.type == 'drop'"
+                         [changeFlag]="this.changeFlag"
+                        [data] ="box.data"
+                        (updateData)="updateData($event, box.modelName)"
+                        (preSubmit)="preSubmit()"
+                        (submit)="onSubmit()"
+                        [scrollHeight] = "'140px'"
+                        >
+      
+                        </app-drop-down> 
+                             
+                              <label class="label lable-font" *ngIf="box.type == 'map'">{{
+                                    box.label | capitalization
+                                  }}</label>  
+            
+                              <app-google-maps-input
+                              [inputInfo]="box" 
+                              *ngIf="box.type == 'map'"
+                               [changeFlag]="this.changeFlag"
+                               (updateData)="updateData($event, box.modelName)"
+                               (preSubmit)="preSubmit()"
+                               (submit)="onSubmit()"
+                              >
+                              </app-google-maps-input>
+                              <label class="label pt-2 lable-font" *ngIf="box.type == 'text2' || box.type == 'disabled' ">{{
+                                    box.label | capitalization
+                                  }}</label>                  
+                              <app-text-box 
+                              [inputInfo]="box" 
+                              *ngIf="box.type == 'text2' || box.type == 'disabled'"
+                               [changeFlag]="this.changeFlag"
+                              (updateData)="updateData($event, box.modelName)"
+                              (preSubmit)="preSubmit()"
+                              (submit)="onSubmit()"
+            
+                              >
+                              </app-text-box>
+                      
+                       </div>
+                     
+               
+            
+            <div class="row pt-2">
+                  <div class="col-md-12">
+                    <div class="row justify-content-end">
+                      <div class="col-md-2">
+                        <app-button
+                        [label]="'Assign Job'"
+                        [padding]="'5px 0'"
+                        [borderRadius]="'0px'"
+                        [color]="'#fff'"
+                        [type]="'login'"
+                        [bgColor]="'#2c3349'"
+                        [fontSize]="'14px'"
+                        (button)="preSubmit()"
+                      >
+                      </app-button>
+                      </div>
+                    </div>
+                  
+                      
+                  </div>
+                
+                
+            </div>
+           
+      </div>
+</div>

@@ -1,0 +1,55 @@
+<div class="container-fluid login-page">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6 col-xl-4 box">
+      <div class="">
+        <!-- <div class="text-center w-75 h-75 m-auto">
+          <div class="auth-logo">
+            <a href="index.html" class="logo logo-light text-center">
+              <span class="logo-lg">
+                <img
+                  src="http://innovasas.xsquarestaging.in/img/logo_INNOVASAS_final.png"
+                  alt=""
+                  height="60"
+                  width="60"
+                />
+              </span>
+            </a> 
+          </div>
+        </div> -->
+        <div class="col-md-12 mt-4" *ngFor="let box of this.inputInfo">
+          <label class="label" *ngIf="box.type == 'text2'">{{
+            box.label | capitalization
+          }}</label>
+          <app-text-box
+            [inputInfo]="box"
+            [changeFlag]="this.changeFlag"
+            *ngIf="box.type == 'text2'"
+            (updateData)="updateData($event, box.modelName)"
+            (preSubmit)="preSubmit()"
+            (submit)="onSubmit()"
+          ></app-text-box>
+         
+        </div>
+
+        <div class="col-md-12 mt-4">
+          <app-button
+            [label]="'login'"
+            [padding]="'5px 0'"
+            [borderRadius]="'0px'"
+            [color]="'#fff'"
+            [type]="'login'"
+            [bgColor]="'#2c3349'"
+            (button)="preSubmit()"
+            [fontSize]="'14px'"
+          >
+          </app-button>
+          <div class="row">
+            <div class="container-fluid my-3 ">
+              <a class="label" href="/sign-up">Dont have an account? Sign up here</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

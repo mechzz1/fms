@@ -1,0 +1,15 @@
+
+
+html,
+body {
+  height: 100%;
+}
+
+:root{
+  --textColor : #2c3349;
+  /* --textColor : #2C3349; */
+  --textLightColor : #B8BDCE;
+  --hoverColor : #E4FAF6;
+  --gradientColor : linear-gradient(to top, rgb(9, 32, 63) 0%, rgb(83, 120, 149) 100%);
+  --sideBarBg : #FFFFFF;
+}

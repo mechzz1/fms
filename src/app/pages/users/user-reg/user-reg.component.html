@@ -1,0 +1,65 @@
+<div class="container bg mt-5">
+     
+      <h5 class="head-title pb-4">
+            New User Form
+      </h5>
+      <div class="row">
+                  <div class="col-md-6" *ngFor="let box of this.inputInfo">   
+                       
+      
+                        <label class="label pt-2 lable-font" *ngIf="box.type == 'text2' || box.type == 'disabled' ">{{
+                              box.label | capitalization
+                            }}</label>                  
+                        <app-text-box 
+                        [inputInfo]="box" 
+                        *ngIf="box.type == 'text2' || box.type == 'disabled'"
+                         [changeFlag]="this.changeFlag"
+                        (updateData)="updateData($event, box.modelName)"
+                        (preSubmit)="preSubmit()"
+                        (submit)="onSubmit()"
+      
+                        >
+                        </app-text-box>
+                        <label class="label pt-2 lable-font" *ngIf="box.type == 'mask'">{{
+                          box.label | capitalization
+                        }}</label>   
+                        <app-mask-input
+                        [inputInfo]="box" 
+                        *ngIf="box.type == 'mask'"
+                        [mask]="'99999-9999999-9'"
+                         [changeFlag]="this.changeFlag"
+                        (updateData)="updateData($event, box.modelName)"
+                        (preSubmit)="preSubmit()"
+                        (submit)="onSubmit()"
+                        ></app-mask-input>
+                   
+                      
+                  </div>    
+            <div class="row pt-2">
+                  <div class="col-md-12">
+                    <div class="row justify-content-end">
+                      <div class="col-md-2">
+                        <app-button
+                        [label]="'Register'"
+                        [padding]="'5px 0'"
+                        [borderRadius]="'0px'"
+                        [color]="'#fff'"
+                        [type]="'login'"
+                        [bgColor]="'#2c3349'"
+                        [fontSize]="'14px'"
+                        (button)="preSubmit()"
+      
+      
+                      >
+                      </app-button>
+                      </div>
+                    </div>
+                  
+                      
+                  </div>
+                
+                
+            </div>
+           
+      </div>
+</div>

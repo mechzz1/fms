@@ -1,0 +1,26 @@
+::ng-deep .p-dialog .p-dialog-header {
+  display: none;
+}
+.modal-content {
+  border: none;
+}
+.modalpayment .close {
+  background-color: transparent;
+  border: none;
+  background: #efefef;
+  border-radius: 100px;
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center !important;
+}
+.modalpayment .modal-header .modal-title {
+  font-weight: bold;
+  font-size: 21px;
+  line-height: 30px;
+  color: #000;
+}
+.label {
+  font-weight: 500;
+}

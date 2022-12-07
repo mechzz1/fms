@@ -1,0 +1,17 @@
+.bg {
+      background-color: var(--sideBarBg);
+      border-radius: 20px;
+      padding: 20px;
+    }
+    
+    .lable-font {
+      font-weight: 600;
+      font-size: 14px;
+    }
+    
+    .head-title {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 21px;
+    }
+    

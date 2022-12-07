@@ -1,0 +1,15 @@
+<!-- <p-splitButton
+  class="p-button"
+  label="{{ label }}"
+  (onClick)="onClick()"
+  [model]="items"
+  [style.color]="color"
+></p-splitButton> -->
+<p-splitButton
+  [showTransitionOptions]="'0ms'"
+  [hideTransitionOptions]="'0ms'"
+  icon="{{icon}}"
+  label="{{ label }}"
+  (onClick)="onClick()"
+  [model]="items"
+></p-splitButton>

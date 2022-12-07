@@ -1,0 +1,8 @@
+::ng-deep.p-progressbar {
+  position: absolute;
+  top: -12px;
+  overflow: hidden;
+  height: 6px;
+}
+.barLoc {
+}

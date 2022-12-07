@@ -1,0 +1,33 @@
+<div class="mt-2" *ngIf="!type">
+  <button
+    label="{{ label }}"
+    [style.background]="bgColor"
+    [style.color]="color"
+    pButton
+    pRipple
+    (click)="onClick()"
+    type="button"
+    class="p-button-raised p-button-info p-button-text col-md-12 text-center btn buttonHover"
+  ></button>
+</div>
+<div class="mt-2 hov" *ngIf="type">
+  <button
+    label="{{ label }}"
+    [style.background]="bgColor"
+    [style.color]="color"
+    [style.font-size]="fontSize"
+    [style.font-weight]="fontWeight"
+    [style.background-image]="backgroundImage"
+    [style.box-shadow]="boxShadow"
+    [style.border-radius]="borderRadius"
+    [style.padding]="padding"
+    [style.margin]="margin"
+    pButton
+    pRipple
+    icon="{{ icon }}"
+    iconPos="iconPos"
+    (click)="onClick()"
+    type="button"
+    class="p-button-raised p-button-info p-button-text col-md-12 text-center btn buttonHover"
+  ></button>
+</div>

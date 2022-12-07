@@ -1,0 +1,24 @@
+<div class="pb-4">
+      <div class="container bg mt-3">
+            <div class="container bg mar-top">
+                  <div class="row">
+                      
+                        <div class="col-md-12">
+                              <div class="row justify-content-center">
+                                    <app-table [tableHeader]="this.tableHeaders" [tableInfo]="this.tableInfo"
+                                    (deleteData)="onDelete($event)"
+                                    [action]="'job'"
+                                    [type]="'employee'" (openModal)="openAndClodeModal($event, true)"></app-table>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+      </div>
+</div>
+<div *ngIf="this.display">
+      <p-dialog header="
+      Assign Job
+      " [(visible)]="display">
+      <app-assign-job></app-assign-job>
+      </p-dialog>
+</div>

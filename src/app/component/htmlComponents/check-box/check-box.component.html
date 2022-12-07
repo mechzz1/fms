@@ -1,0 +1,17 @@
+<ng-container *ngIf="this.inputInfo">
+  <ng-container *ngFor="let value of this.inputInfo.value">
+    <div class="p-field-checkbox">
+      <p-checkbox
+        name="inputInfo.name"
+        [value]="value"
+        [formControl]="this.formControl"
+        [inputId]="value"
+      >
+      </p-checkbox>
+      {{ this.inputInfo.details }}<a href="#">{{ this.inputInfo.link }}</a>
+    </div>
+    <small id="username2-help" class="p-error" *ngIf="this.formControl.dirty">{{
+      getError()
+    }}</small>
+  </ng-container>
+</ng-container>

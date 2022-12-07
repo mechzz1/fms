@@ -1,0 +1,53 @@
+<div class="mt-2" *ngIf="this.inputInfo.type == 'text'">
+  <h5>{{ this.inputInfo.label | capitalization }} :</h5>
+  <div>
+    <input
+      class="p-inputtext-md col-md-12"
+      type="{{ this.inputInfo.inputType }}"
+      pInputText
+      [formControl]="this.formControl"
+      placeholder="Please Enter {{ this.inputInfo.label | capitalization }}"
+      (keyup.enter)="onEnter()"
+    />
+  </div>
+
+  <small id="username2-help" class="p-error" *ngIf="this.formControl.dirty">{{
+    getError()
+  }}</small>
+</div>
+<div class="mt-2" *ngIf="this.inputInfo.type == 'text2'">
+  <div>
+    <input
+      class="p-inputtext-md col-md-12"
+      type="{{ this.inputInfo.inputType }}"
+      pInputText
+      [formControl]="this.formControl"
+      placeholder=" {{ this.inputInfo.placeHolder }}"
+      (keyup.enter)="onEnter()"
+      (onClick)="onClick()"
+    />
+    <!-- [disabled]="this.inputInfo.disabled" -->
+  </div>
+  <small id="username2-help" class="p-error" *ngIf="this.formControl.dirty">{{
+    getError()
+  }}</small>
+</div>
+<div class="mt-2" *ngIf="this.inputInfo.type == 'disabled'">
+  <div>
+    <input
+      id="disabled-input"
+      class="p-inputtext-md col-md-12"
+      type="{{ this.inputInfo.inputType }}"
+      pInputText
+      disabled="true"
+      [formControl]="this.formControl"
+      placeholder=" {{ this.inputInfo.placeHolder }}"
+      (keyup.enter)="onEnter()"
+      (onClick)="onClick()"
+    />
+    <!-- [disabled]="this.inputInfo.disabled" -->
+  </div>
+  <small id="username2-help" class="p-error" *ngIf="this.formControl.dirty">{{
+    getError()
+  }}</small>
+</div>

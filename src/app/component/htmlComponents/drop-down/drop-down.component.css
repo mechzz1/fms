@@ -1,0 +1,7 @@
+::ng-deep .p-dropdown {
+  width: 100%;
+}
+::ng-deep.p-dropdown-items-wrapper {
+  overflow: auto;
+  /* max-height: 150px !important; */
+}

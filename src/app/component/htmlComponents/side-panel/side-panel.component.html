@@ -1,0 +1,84 @@
+<div class="d-flex">
+  <div
+    class="d-flex flex-column vh-100 flex-shrink-0 pt-3 text-white main displayFlag"
+    style="width: 250px"
+    [ngClass]="this.showFlag == true ? 'd-flex' : 'd-none'"
+  >
+    <!-- <a
+      href="/"
+      class="d-flex align-items-center mb-md-0 me-md-auto text-white text-decoration-none"
+    >
+      <img class="ml-8" src="assets/logo.png" width="80" height="120" />
+    </a> -->
+    <hr />
+    <h6 class="text-center">User</h6>
+    <!-- <ul class="nav nav-pills flex-column mb-auto mt-1 p-2">
+      <li (click)="hideShow('sms')" *ngIf="this.smsFlag == true">
+        <a
+          class="nav-link text-white"
+          id="smsSelect"
+          routerLink="/side-panel/dashboard"
+        >
+          <i class="far fa-comment-alt"></i><span class="ms-2">SMS</span>
+        </a>
+      </li>
+
+      <div class="row borderLeft" id="sms">
+        <div class="col-12 pt-0 pb-0 listItems">
+          <ul class="mt-2">
+            <li
+              *ngIf="
+                this.sidePanelInfo.singleSms &&
+                this.sidePanelInfo.singleSms == 'Single'
+              "
+              [ngClass]="
+                this.router.url == '/side-panel/single-sms' ? 'active' : ''
+              "
+            >
+              <a class="smTxt" routerLink="single-sms" id="singleSms"
+                >Single SMS</a
+              >
+            </li>
+            <li
+              *ngIf="
+                this.sidePanelInfo.bulkSms &&
+                this.sidePanelInfo.bulkSms == 'Bulk'
+              "
+              [ngClass]="
+                this.router.url == '/side-panel/bulk-sms' ? 'active' : ''
+              "
+            >
+              <a class="smTxt" routerLink="bulk-sms">Bulk SMS</a>
+            </li>
+
+            <li
+              *ngIf="
+                this.sidePanelInfo.campaigns &&
+                this.sidePanelInfo.campaigns == 'Campaigns'
+              "
+              [ngClass]="
+                this.router.url == '/side-panel/create-campaign' ? 'active' : ''
+              "
+            >
+              <a class="smTxt" routerLink="create-campaign">Campaigns</a>
+            </li>
+            <li
+              [ngClass]="
+                this.router.url == '/side-panel/contact-lists' ? 'active' : ''
+              "
+            >
+              <a class="smTxt" routerLink="contact-lists">ContactLists</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+    </ul> -->
+  </div>
+
+  <div style="width: 100%" [ngClass]="this.showFlag == true ? 'content' : ''">
+    <!-- <button class="btnShow" pButton type="button" (click)="sideBar()" icon="pi pi-bars" iconPos="left"></button> -->
+    <!-- <app-header (sidepanelBtn)="this.sideBar()"></app-header> -->
+    <!-- <router-outlet></router-outlet> -->
+  </div>
+</div>

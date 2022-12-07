@@ -1,0 +1,30 @@
+::ng-deep.dropdown-toggle::after {
+  display: none;
+}
+::ng-deep .p-chips {
+  display: unset !important;
+}
+.menus {
+  position: absolute;
+  top: 100% !important;
+  left: 0.3% !important;
+  width: 50%;
+  /* -webkit-transform: scaleX(-1);
+  transform: scaleX(-1); */
+}
+/* ::ng-deep
+  .p-chips
+  .p-chips-multiple-container
+  .p-chips-input-token:first-child {
+  padding-left: 20px;
+} */
+/* ::ng-deep .p-chips .p-chips-multiple-container .p-chips-token:first-child {
+  margin-left: 20px;
+} */
+.icon {
+  /* position: absolute !important; */
+  /* margin-top: 18px !important;
+  margin-left: 10px !important; */
+  -webkit-transform: scaleX(-1) !important;
+  transform: scaleX(-1) !important;
+}

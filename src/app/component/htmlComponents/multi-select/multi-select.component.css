@@ -1,0 +1,9 @@
+::ng-deep.p-multiselect {
+  display: inline-flex;
+  cursor: pointer;
+  position: relative;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 100%;
+}

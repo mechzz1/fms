@@ -1,0 +1,15 @@
+<div *ngFor="let category of this.inputInfo.option" class="p-field-checkbox">
+  <p-radioButton
+    [inputId]="category.key"
+    name="category"
+    [value]="category"
+    [formControl]="this.formControl"
+    (onClick)="click()"
+  ></p-radioButton>
+  <label [for]="category.key" class="pt-3 ml-3"> {{ category.value }}</label>
+  <div>
+    <small id="username2-help" class="p-error" *ngIf="this.formControl.dirty">{{
+      getError()
+    }}</small>
+  </div>
+</div>

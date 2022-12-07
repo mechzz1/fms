@@ -1,0 +1,59 @@
+<div *ngIf="this.accessFrom == 'campaignWhen'">
+  <div class="p-fluid p-grid p-formgrid">
+    <p-calendar
+      [formControl]="this.formControl"
+      placeholder=" {{ this.inputInfo.placeHolder }}"
+      (keyup.enter)="onEnter()"
+      dateFormat="dd/mm/yy"
+      [minDate]="this.minDate"
+    ></p-calendar>
+    <small id="username2-help" class="p-error" *ngIf="this.formControl.dirty">{{
+      getError()
+    }}</small>
+  </div>
+</div>
+<div *ngIf="this.accessFrom == 'smsPlusDashBoard'">
+  <div class="p-fluid p-grid p-formgrid">
+    <p-calendar
+      [formControl]="this.formControl"
+      placeholder=" {{ this.inputInfo.placeHolder }}"
+      (keyup.enter)="onEnter()"
+      dateFormat="yy-mm-dd"
+      [minDate]="this.minDate"
+    ></p-calendar>
+    <small id="username2-help" class="p-error" *ngIf="this.formControl.dirty">{{
+      getError()
+    }}</small>
+  </div>
+</div>
+<div *ngIf="this.accessFrom == 'smsPlus'">
+  <div class="p-fluid p-grid p-formgrid">
+    <p-calendar
+      [formControl]="this.formControl"
+      placeholder=" {{ this.inputInfo.placeHolder }}"
+      [inline]="this.inLine"
+      selectionMode="{{ this.selectionMode }}"
+      (keyup.enter)="onEnter()"
+      dateFormat="dd.mm.yy"
+    ></p-calendar>
+    <small id="username2-help" class="p-error" *ngIf="this.formControl.dirty">{{
+      getError()
+    }}</small>
+  </div>
+</div>
+<div *ngIf="this.accessFrom == 'campaignReporting'">
+  <div class="p-fluid p-grid p-formgrid">
+    <p-calendar
+      [formControl]="this.formControl"
+      placeholder=" {{ this.inputInfo.placeHolder }}"
+      (keyup.enter)="onEnter()"
+      selectionMode="range"
+      dateFormat="dd/mm/yy"
+      [maxDate]="this.maxDate"
+      [inline]="true"
+    ></p-calendar>
+    <small id="username2-help" class="p-error" *ngIf="this.formControl.dirty">{{
+      getError()
+    }}</small>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="pb-4">
+      <div class="container bg mt-3">
+            <div class="container bg mar-top">
+                  <div class="row">
+                        <div class="col-12 text-right">
+                              <button pButton label="Add New Vehicle" class="p-button-outlined p-button-rounded ml-3"
+                                    icon="pi pi-plus" (click)="addUser()"></button>
+                              <i class=""></i>
+                        </div>
+                        <div class="col-md-12">
+                              <div class="row justify-content-center">
+                                    <app-table [tableHeader]="this.tableHeaders" [tableInfo]="this.tableInfo"
+                                          [type]="'employee'"
+                                          [action]="'employee'"
+                                    (deleteData)="onDelete($event)"
+                                    (edit)="onEditUser($event)" (openModal)="openAndClodeModal($event, true)"></app-table>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+      </div>
+</div>
+<div *ngIf="this.display">
+      <p-dialog header="
+      New Vehicle Form
+      " [(visible)]="display">
+            <app-add-vehicle
+            (closeModal)="openAndClodeModal($event, true)"
+            ></app-add-vehicle>
+      </p-dialog>
+</div>

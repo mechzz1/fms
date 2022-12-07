@@ -1,0 +1,40 @@
+<div class="pb-4">
+      <div class="container bg mt-3">
+            <div class="container bg mar-top">
+                  <div class="row">
+                        <div class="col-12 text-right">
+                              <button pButton label="Add New User" class="p-button-outlined p-button-rounded ml-3"
+                                    icon="pi pi-plus" (click)="addUser()"></button>
+                              <i class=""></i>
+                        </div>
+                        <div class="col-md-12">
+                              <div class="row justify-content-center">
+                                    <app-table
+                                    [tableHeader]="this.tableHeaders"
+                                    [tableInfo]="this.tableInfo"
+                                    [type]="'employee'"
+                                    [action]="'employee'"
+                                    (deleteData)="onDelete($event)"
+                                    (edit)="onEditUser($event)"
+                                  ></app-table>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+      </div>
+</div>
+<div *ngIf="this.display">
+      <p-dialog header="Add User" [(visible)]="display">
+            <app-user-reg
+            (closeModal)="openAndClodeModal($event, true)"
+            ></app-user-reg>
+      </p-dialog>
+</div>
+<div *ngIf="this.display1">
+      <p-dialog header="Edit User" [(visible)]="display1">
+            <app-edit-user
+
+            [employeeId]="this.employeeId"
+            ></app-edit-user>
+      </p-dialog>
+</div>

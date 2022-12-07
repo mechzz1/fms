@@ -1,0 +1,60 @@
+<!-- <div class="row justify-content-center">
+  <div class="col-md-12">
+    <p-dropdown
+      [options]="data"
+      [formControl]="formControl"
+      optionLabel="name"
+      [filter]="true"
+      filterBy="name"
+      [showClear]="true"
+      placeholder="Select a Country"
+      class="dropDown"
+      (keyup.enter)="onEnter()"
+    >
+      <ng-template pTemplate="selecteDItem">
+        <div class="country-item country-item-value" *ngIf="formControl">
+          <div>{{ formControl.value.name }}</div>
+        </div>
+      </ng-template>
+      <ng-template let-country pTemplate="item">
+        <div class="country-item">
+          <div>{{ country.name }}</div>
+        </div>
+      </ng-template>
+    </p-dropdown>
+  </div>
+</div> -->
+<div class="row justify-content-center mt-2">
+  <div class="col-md-12">
+    <span class="p-input-icon-left col-md-12">
+      <p-dropdown
+        [options]="this.data"
+        [formControl]="formControl"
+        optionLabel="name"
+        [showClear]="true"
+        [scrollHeight]="this.scrollHeight"
+        [virtualScroll]="true"
+        itemSize="30"
+        placeholder="{{ this.inputInfo.placeHolder | capitalization }}"
+        class="dropDown"
+        (keyup.enter)="onEnter()"
+        (onClick)="click()"
+      >
+        <ng-template class="list" pTemplate="selecteDItem">
+          <div class="size country-item country-item-value" *ngIf="formControl">
+            <div>{{ formControl.value.name }}</div>
+          </div>
+        </ng-template>
+        <ng-template let-country pTemplate="item" class="list">
+          <div class="country-item">
+            <div>{{ country.name }}</div>
+          </div>
+        </ng-template>
+      </p-dropdown>
+    </span>
+
+    <small id="username2-help" class="p-error" *ngIf="this.formControl.dirty">{{
+      getError()
+    }}</small>
+  </div>
+</div>
