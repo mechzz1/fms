@@ -1,0 +1,7 @@
+.hero {
+      padding-block-start: calc(60px + var(--section-padding));
+      padding-block-end: var(--section-padding);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }

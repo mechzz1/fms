@@ -93,16 +93,19 @@ export class AllUsersComponent implements OnInit {
     }else{
       this.tableInfo = [];
       data.data.forEach((item) => {
-      let obj = new TableInfo();
-      obj.name = item.first_name + item.last_name;
-      obj.email = item.email;
-      obj.id = item.id;
-      obj.contact = item.contact;
-      obj.cnic = item.cnic;
-
-
-      obj.userType = "Employee";
-      this.tableInfo.push(obj);
+      if(item.first_name){
+        let obj = new TableInfo();
+        obj.name = item.first_name + item.last_name;
+        obj.email = item.email;
+        obj.id = item.id;
+        obj.contact = item.contact;
+        obj.cnic = item.cnic;
+  
+  
+        obj.userType = "Employee";
+        this.tableInfo.push(obj);
+      }
+   
     });
     }
   }
