@@ -95,13 +95,11 @@ export class AllUsersComponent implements OnInit {
       data.data.forEach((item) => {
       if(item.first_name){
         let obj = new TableInfo();
-        obj.name = item.first_name + item.last_name;
+        obj.name = item.first_name + " " + item.last_name;
         obj.email = item.email;
         obj.id = item.id;
         obj.contact = item.contact;
         obj.cnic = item.cnic;
-  
-  
         obj.userType = "Employee";
         this.tableInfo.push(obj);
       }

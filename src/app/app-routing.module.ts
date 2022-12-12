@@ -15,8 +15,8 @@ import { AllVehicleComponent } from "./pages/vehicle/all-vehicle/all-vehicle.com
 import { VehicleAllocationComponent } from "./pages/vehicle/vehicle-allocation/vehicle-allocation.component";
 
 const routes: Routes = [
-  { path: "", pathMatch: "full", redirectTo: "home" },
-  { path: "home", component: LandingComponent },
+  { path: "", pathMatch: "full", redirectTo: "login" },
+  // { path: "home", component: LandingComponent },
   { path: "login", component: LoginComponent },
   { path: "sign-up", component: SignUpComponent },
   { path: "side-panel", component: SidePanelComponent },
