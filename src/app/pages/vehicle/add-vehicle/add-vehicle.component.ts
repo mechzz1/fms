@@ -45,6 +45,23 @@ export class AddVehicleComponent implements OnInit {
       ]
     );
     this.createInput(
+      "vehicle name",
+      "vehicle_name",
+      "text",
+      "Name",
+      "text2",
+      "",
+      "",
+      "",
+      [
+        {
+          type: Validators.required,
+          msg: "You must enter your Vehicle Name",
+        },
+       
+      ]
+    );
+    this.createInput(
       "make",
       "vehicle_company",
       "text",
@@ -95,23 +112,7 @@ export class AddVehicleComponent implements OnInit {
        
       ]
     );
-    this.createInput(
-      "Year",
-      "year",
-      "number",
-      "Year",
-      "text2",
-      "",
-      "",
-      "",
-      [
-        {
-          type: Validators.required,
-          msg: "You must enter your Year",
-        },
-       
-      ]
-    );
+  
     this.createInput(
       "Current Mileage",
       "milage",

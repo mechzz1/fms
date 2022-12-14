@@ -16,6 +16,7 @@ export class GoogleMapsInputComponent implements OnInit, AfterContentChecked {
   longitude: number;
   zoom: number;
   address: string;
+  public iconUrl = "http://maps.google.com/mapfiles/ms/icons/red-dot.png";
   @Input() inputInfo: InputInfo;
   @Input() changeFlag: boolean;
   @Output() updateData = new EventEmitter<string>();

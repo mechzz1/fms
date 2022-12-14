@@ -58,6 +58,9 @@ import { AssignVehicleComponent } from './pages/vehicle/vehicle-allocation/assig
 import { AllJobsComponent } from './pages/job/all-jobs/all-jobs.component';
 import { ConfigService } from 'src/app/auth/app.config.service';
 import { EditUserComponent } from './pages/users/edit-user/edit-user.component';
+import { LocateVehicleComponent } from './pages/vehicle/locate-vehicle/locate-vehicle.component';
+import * as io from 'socket.io-client';
+
 
 
 registerLocaleData(en);
@@ -113,6 +116,7 @@ export function tokenGetter() {
     AssignVehicleComponent,
     AllJobsComponent,
     EditUserComponent,
+    LocateVehicleComponent,
 
   ],
   imports: [
@@ -144,7 +148,7 @@ export function tokenGetter() {
       libraries: ['places']
     })
   ],
-  providers: [MessageService, DatePipe , ApiService , ConfigService],
+  providers: [MessageService, DatePipe , ApiService , ConfigService ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

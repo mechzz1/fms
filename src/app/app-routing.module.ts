@@ -12,6 +12,7 @@ import { AllUsersComponent } from "./pages/users/all-users/all-users.component";
 import { UserRegComponent } from "./pages/users/user-reg/user-reg.component";
 import { AddVehicleComponent } from "./pages/vehicle/add-vehicle/add-vehicle.component";
 import { AllVehicleComponent } from "./pages/vehicle/all-vehicle/all-vehicle.component";
+import { LocateVehicleComponent } from "./pages/vehicle/locate-vehicle/locate-vehicle.component";
 import { VehicleAllocationComponent } from "./pages/vehicle/vehicle-allocation/vehicle-allocation.component";
 
 const routes: Routes = [
@@ -45,6 +46,10 @@ const routes: Routes = [
     {
       path:"assign-job",
       component:AssignJobComponent,
+    },
+    {
+      path:"test",
+      component:LocateVehicleComponent,
     }
   ]
 }
