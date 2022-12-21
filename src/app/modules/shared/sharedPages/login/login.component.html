@@ -1,5 +1,7 @@
 <div class="container-fluid login-page">
+
   <div class="row justify-content-center">
+    
     <div class="col-md-8 col-lg-6 col-xl-4 box">
       <div class="">
         <!-- <div class="text-center w-75 h-75 m-auto">
@@ -16,6 +18,23 @@
             </a> 
           </div>
         </div> -->
+        <div class="text-center">
+          <div class="row justify-content-center">
+            <div class="col-md-12">
+              <a class="" href="#">
+                <img src="assets/images/logo-dark.svg" alt="Sakai Logo"
+                    height="50" class="mr-0 lg:mr-2"><span
+                    class="text-900 font-medium text-2xl line-height-3 "></span>
+            </a>
+            </div>
+            <div class="col-md-12">
+            <p class="font-weight-bold">
+              Login
+            </p>
+            </div>
+          </div>
+        
+        </div>
         <div class="col-md-12 mt-4" *ngFor="let box of this.inputInfo">
           <label class="label" *ngIf="box.type == 'text2'">{{
             box.label | capitalization

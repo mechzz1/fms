@@ -57,6 +57,7 @@ export class LocateVehicleComponent implements OnInit, OnDestroy {
     if(data.error){
       this.handleError(data);
     }else{
+      console.log(data);
       this.latitude = data.data[0].vehicle_last_location.latitude ;
       this.longitude = data.data[0].vehicle_last_location.longitude ;
   }

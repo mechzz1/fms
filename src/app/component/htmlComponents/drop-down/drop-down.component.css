@@ -5,3 +5,10 @@
   overflow: auto;
   /* max-height: 150px !important; */
 }
+
+::ng-deep.p-dropdown .p-dropdown-label.p-placeholder {
+  font-size: 12px !important;
+}
+::ng-deep.p-dropdown.p-dropdown-clearable .p-dropdown-label {
+  font-size: 14px;
+}

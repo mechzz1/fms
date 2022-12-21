@@ -45,7 +45,7 @@ export class GoogleMapViewComponent implements OnInit , AfterContentChecked {
   ngOnInit(): void {
 
     this.mapsAPILoader.load().then(() => {
-      this.setCurrentLocation();
+      this.test();
       this.geoCoder = new google.maps.Geocoder;
 
       // let autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement);
@@ -68,14 +68,16 @@ export class GoogleMapViewComponent implements OnInit , AfterContentChecked {
       // });
     });
  
-
-    
     
   }
   onEnter(val?) {
     this.preSubmit.emit();
    
   }
+test(){
+  this.zoom = 8;
+  this.getAddress(this.latitude, this.longitude);
+}
 
   private setCurrentLocation() {
 

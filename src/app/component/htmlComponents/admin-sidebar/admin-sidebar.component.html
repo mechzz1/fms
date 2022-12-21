@@ -17,7 +17,7 @@
                         {{ dateTime | date:'h:mm a' }}
                   </div>
                   <div class="col-md-2 col-sm-2 text-end ">
-                        <div class="d-flex justify-content-end">
+                        <!-- <div class="d-flex justify-content-end">
                               <div class="pr-3 header-icon icon-size ">
 
                                     <i class="fal fa-building " (click)="op.toggle($event)"></i>
@@ -68,7 +68,7 @@
                                           </ng-template>
                                     </p-overlayPanel>
                               </div>
-                        </div>
+                        </div> -->
 
 
 
@@ -87,16 +87,21 @@
             </a>
       </div>
       <div class="profile">
-            <img src="https://1.bp.blogspot.com/-vhmWFWO2r8U/YLjr2A57toI/AAAAAAAACO4/0GBonlEZPmAiQW4uvkCTm5LvlJVd_-l_wCNcBGAsYHQ/s16000/team-1-2.jpg"
-                  alt="profile_picture">
+            <div class="row">
+                  <div class="col-md-12 justify-content-center">
+                        <img src="assets/images/logo-dark.svg" alt="Sakai Logo"
+                             >
+                  </div>
+            </div>
+                  
+                
             <h3>Anamika Roy</h3>
-            <p>Designer</p>
       </div>
       <ul>
             <li [ngClass]="
                   this.router.url == '/admin/dashboard' ? 'active' : ''
                 ">
-                  <a routerLink="dashboard" (click)="headerNameIcon('DashBoard','fass fa fa-home fa-2x')">
+                  <a routerLink="dashboard" (click)="headerNameIcon('Dashboard','fass fa fa-home fa-2x')">
                         <i class="fass fa fa-home fa-2x"></i>
                         <span class="nav-text">
                               Dashboard
@@ -162,9 +167,9 @@
 <li [ngClass]="
 this.router.url == '/admin/assign-job' ? 'active' : ''
 ">
-<a routerLink="assign-job" (click)="headerNameIcon('Job','fa fa-tasks')">
+<a routerLink="assign-job" (click)="headerNameIcon('Assign Job','fa fa-tasks')">
       
-      <i class="fa fa-tasks"></i>
+      <i class="fass fa fa-tasks"></i>
       
       <span class="nav-text">
             Assign Job

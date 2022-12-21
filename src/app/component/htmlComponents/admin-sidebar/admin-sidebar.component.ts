@@ -20,7 +20,26 @@ export class AdminSidebarComponent implements OnInit {
   constructor(public router: Router,
     private tokenStorage: TokenStorageService,
     private Jarwis: AuthService,
-    private messageService: MessageService,) { }
+    private messageService: MessageService,) { 
+    let url = this.router.url.split("admin/")[1];
+    if (url == "dashboard") {
+      this.headerNameIcon("Dashboard", "fa fa-home fa-2x");
+    }else if(url =="user"){
+      this.headerNameIcon('User Registration','fass fa fa-user fa-2x');
+    }
+    else if(url =="vehicle"){
+      this.headerNameIcon('Vehicle Registration','fass fa fa-truck fa-2x');
+    }
+    else if(url =="vehicle-allocation"){
+      this.headerNameIcon('Vehicle Allocation','fass fa fa-truck fa-2x');
+    }
+    else if(url =="job"){
+      this.headerNameIcon('Job','fass fas fa-tasks fa-2x');
+    }
+    else if(url =="assign-job"){
+      this.headerNameIcon('Assign Job','fa fa-tasks');
+    }
+    }
 
   ngOnInit(): void {
     timer(0,1000).subscribe(() =>{

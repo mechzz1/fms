@@ -755,6 +755,48 @@
           class="p-button-rounded p-button-text p-button-danger"
         ></button>
       </td>
+      <td
+        style="text-align: center; width: 20%"
+        *ngIf="this.action == 'user'"
+      >
+        <button
+          pButton
+          pRipple
+          type="button"
+          *ngIf="this.verFlag2[ri]"
+          icon="fas fa-check"
+          (click)="onDelete(rowData, ri, this.tableHeader[0].justDelete)"
+          class="p-button-rounded p-button-text p-button-info"
+        ></button>
+        <button
+          pButton
+          pRipple
+          type="button"
+          *ngIf="this.verFlag2[ri]"
+          icon="fas fa-times"
+          (click)="onChangeFlag(ri)"
+          class="p-button-rounded p-button-text p-button-info"
+        ></button>
+
+        <button
+          pButton
+          pRipple
+          *ngIf="!this.verFlag2[ri]"
+          type="button"
+          icon="fas fa-edit"
+          (click)="onEditEmployee(rowData)"
+          class="p-button-rounded p-button-text p-button-info"
+        ></button>
+        <button
+          pButton
+          pRipple
+          *ngIf="!this.verFlag2[ri]"
+          type="button"
+          icon="fas fa-trash-alt"
+          (click)="onChangeFlag(ri)"
+          class="p-button-rounded p-button-text p-button-danger"
+        ></button>
+      </td>
       <td style="text-align: center; width: 20%" *ngIf="this.action == 'job'">
         <button
         pButton
