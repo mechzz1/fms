@@ -36,6 +36,7 @@ export class AssignJobComponent implements OnInit {
     this.getAllEmployee();
 
     this.generateFormData();
+    this.updateData(1,"job_status");
   }
 
   getAllEmployee(){
@@ -195,6 +196,7 @@ export class AssignJobComponent implements OnInit {
       }
 
     }
+    console.log(this.jobInfo);
   }
   handleError(error) {
     let msg = error.error ? error.error : error.message;

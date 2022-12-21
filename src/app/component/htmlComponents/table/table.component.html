@@ -737,6 +737,15 @@
           class="p-button-rounded p-button-text p-button-info"
         ></button>
         <button
+        pButton
+        pRipple
+        *ngIf="!this.verFlag2[ri]"
+        type="button"
+        icon="fas fa-map-marker-alt"
+        (click)="onLocateVehicle(rowData)"
+        class="p-button-rounded p-button-text p-button-info"
+      ></button>
+        <button
           pButton
           pRipple
           *ngIf="!this.verFlag2[ri]"

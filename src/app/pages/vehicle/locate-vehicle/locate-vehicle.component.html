@@ -1,1 +1,15 @@
-<p>locate-vehicle workssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss!</p>
+
+
+
+<div class="pb-4">
+      <div class="container bg mt-3">
+            <div class="container bg mar-top">
+                  <app-google-map-view
+                  *ngIf="latitude && longitude"
+                  [latitude]="this.latitude"
+                  [longitude]="this.longitude"
+                  >
+                  </app-google-map-view>
+            </div>
+      </div>
+</div>

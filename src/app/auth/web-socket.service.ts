@@ -6,12 +6,15 @@ import { io } from 'socket.io-client';
 })
 export class WebSocketService {
   socket : any;
-  readonly url : string = "http://127.0.0.1:8000/job/";
+  url : string ;
   constructor() { 
-    this.socket = io(this.url);
+    // this.socket = io("http://127.0.0.1:8000/vehicle/");
   }
 
-  listen(eventName:string){
+  listen(eventName:string , url:string){
+    this.url = url;
+    console.log(url);
+    this.socket = io(url);
     return new Observable((Subscriber) =>{
       this.socket.on(eventName , (data)=>{
         Subscriber.next();

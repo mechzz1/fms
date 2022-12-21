@@ -12,36 +12,35 @@ import { userInfo } from 'src/app/models/userInfo.model';
 export class VehicleAllocationComponent implements OnInit {
   tableHeaders = [
     {
-      field: "employeeId",
+      field: "employee_id",
       header: "Employee ID",
       type: "text",
       edit: "false",
     },
     {
-      field: "email",
+      field: "employee_email",
       header: "Email",
       type: "text",
       edit: "false",
     },
     {
-      field: "name",
+      field: "employee_name",
       header: "Name",
       type: "text",
       edit: "false",
     },
     {
-      field: "vehicleRegNo",
+      field: "vehicle_number",
       header: "Vehicle Reg Number",
       type: "text",
       edit: "false",
     },
     {
-      field: "vehicleId",
-      header: "Vehicle ID",
+      field: "vehicle_name",
+      header: "Vehicle Name",
       type: "text",
       edit: "false",
     },
-
     {
       field: "actions",
       header: "Actions",
@@ -80,17 +79,13 @@ export class VehicleAllocationComponent implements OnInit {
       this.tableInfo = [];
       data.data.forEach((item) => {
       let obj = new TableInfo();
+      obj.employee_id = item.empolyee_id;
+      obj.employee_name = item.employee_name;
+      obj.employee_email = item.emoloyee_email;
       obj.vehicle_number = item.vehicle_number;
       obj.vehicle_name = item.vehicle_name;
       obj.vehicle_company= item.vehicle_company;
       obj.vehicle_model= item.vehicle_model;
-      obj.email = item.email;
-      obj.id = item.id;
-      obj.contact = item.contact;
-      obj.cnic = item.cnic;
-
-
-      obj.userType = "Employee";
       this.tableInfo.push(obj);
     });
     }

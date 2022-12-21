@@ -52,6 +52,10 @@ export class TableInfo {
   vehicle_name:string;
   vehicle_model:string;
   vehicle_number:string;
+  employee_name:string;
+  employee_email:string;
+  employee_id : string;
+  vehicle_id:string;
   vehicle_company:string;
   driver : string;
   pickup_location : string;

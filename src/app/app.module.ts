@@ -60,6 +60,7 @@ import { ConfigService } from 'src/app/auth/app.config.service';
 import { EditUserComponent } from './pages/users/edit-user/edit-user.component';
 import { LocateVehicleComponent } from './pages/vehicle/locate-vehicle/locate-vehicle.component';
 import * as io from 'socket.io-client';
+import { GoogleMapViewComponent } from './component/htmlComponents/google-map-view/google-map-view.component';
 
 
 
@@ -117,6 +118,7 @@ export function tokenGetter() {
     AllJobsComponent,
     EditUserComponent,
     LocateVehicleComponent,
+    GoogleMapViewComponent,
 
   ],
   imports: [

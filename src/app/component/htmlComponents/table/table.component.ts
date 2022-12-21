@@ -278,6 +278,11 @@
        queryParams: { userId: data.id },
      });
    }
+   onLocateVehicle(data){
+    this.router.navigate(["admin/test"], {
+      queryParams: { vehicleId: data.id },
+    });
+   }
    onEditClient(data) {
      this.edit.emit(data.id);
    }

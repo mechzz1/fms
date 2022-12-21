@@ -134,6 +134,7 @@ export class AssignVehicleComponent implements OnInit {
 
   updateData(value, label) {
     this.vehicleAssignInfo[label] = value.id;
+    console.log(this.vehicleAssignInfo);
   }
   getAllEmployee(){
     this.Jarwis.getAllEmployee().subscribe(
