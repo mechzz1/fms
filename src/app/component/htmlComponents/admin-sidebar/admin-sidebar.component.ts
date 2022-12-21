@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MessageService } from 'primeng/api';
 import { timer } from 'rxjs';
+import { AuthService } from 'src/app/auth/auth.service';
+import { TokenStorageService } from 'src/app/auth/token-storage.service';
 
 @Component({
   selector: 'app-admin-sidebar',
@@ -13,7 +16,11 @@ export class AdminSidebarComponent implements OnInit {
   checked:boolean = true;
   title = 'Dashboard';
   icon = 'fa fa-home fa-2x';
-  constructor(public router: Router,) { }
+  userId;
+  constructor(public router: Router,
+    private tokenStorage: TokenStorageService,
+    private Jarwis: AuthService,
+    private messageService: MessageService,) { }
 
   ngOnInit(): void {
     timer(0,1000).subscribe(() =>{
@@ -21,6 +28,41 @@ export class AdminSidebarComponent implements OnInit {
 
     })
     this.checked = true;
+
+    this.userId = this.tokenStorage.getUserId();
+    console.log(this.userId);
+    this.getEmployeeData();
+  }
+  getEmployeeData(){
+    this.Jarwis.getOneEmployee(this.userId).subscribe(
+      (data) => this.handleData(data, "success"),
+      (error) => this.handleError(error)
+    );
+  }
+  handleError(error) {
+    let msg = error.error ? error.error : error.message;
+    this.addMessages("error", "Error", msg);
+  }
+  handleData(data, type) {
+    if(data.error){
+      this.handleError(data);
+    }else{
+      console.log(data);
+      
+      // this.addMessages("success", "Success", data.message);
+    }
+  }
+  addMessages(severity, summary, detail) {
+    this.messageService.clear();
+    this.messageService.add({
+      severity: severity,
+      summary: summary,
+      detail: detail,
+      sticky: true,
+    });
+    setTimeout(() => {
+      this.messageService.clear();
+    }, 3000);
   }
 
   navigate(name) {

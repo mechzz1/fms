@@ -127,9 +127,10 @@ export class LoginComponent implements OnInit, AfterViewInit {
     if(data.error){
       this.handleError(data); 
     }else{
+      // console.log(data)
       this.addMessages("success", "Success", data.message);
       this.tokenStorage.saveToken(data.data[0].token);
-      console.log("token" , data.data[0].token)
+      this.tokenStorage.saveId(data.data[0].id);
       this.isLoggedIn = true;
       this.router.navigateByUrl("/admin/dashboard");
     }
