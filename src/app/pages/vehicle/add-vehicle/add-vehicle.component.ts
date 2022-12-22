@@ -131,6 +131,23 @@ export class AddVehicleComponent implements OnInit {
       ]
     );
     this.createInput(
+      "Vehicle Fuel",
+      "vehicle_fuel",
+      "number",
+      "Vehicle Fuel in %",
+      "text2",
+      "",
+      "",
+      "",
+      [
+        {
+          type: Validators.required,
+          msg: "You must enter your Vehicle Fuel",
+        },
+       
+      ]
+    );
+    this.createInput(
       "Colour",
       "colour",
       "text",

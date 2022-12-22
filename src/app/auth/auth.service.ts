@@ -165,6 +165,21 @@ export class AuthService {
       httpOptionsSaved
     );
   }
+  public getVehicleLocation(id) {
+    const httpOptionsSaved = {
+      headers: new HttpHeaders({
+        Accept: "application/json",
+        "Access-Control-Allow-Origin": `${this.baseUrl}`,
+        "Authorization": "token " + this.tokenStorage.getToken(),
+
+      }),
+    };
+    return this.http.get<JwtResponse>(
+      `${this.baseUrl}/vehicle/?id=` + id,
+      httpOptionsSaved
+    );
+  }
+  
   public deleteVehicle(data) {
     const httpOptionsSaved = {
       headers: new HttpHeaders({

@@ -24,6 +24,8 @@ const File_KEY = "AuthFile";
 const EVENT_KEY = "AuthEvent";
 
 const USER_ID = "UserId";
+const COMP_NAME = "CompName";
+
 
 /**
  * This Injectable ensures that the compiler will generate the necessary metadata to create the class's dependencies when the class is injected
@@ -54,6 +56,13 @@ export class TokenStorageService {
   public saveId(id: string) {
     window.sessionStorage.removeItem(USER_ID);
     window.sessionStorage.setItem(USER_ID, id);
+  }
+  public saveComp(name: string) {
+    window.sessionStorage.removeItem(COMP_NAME);
+    window.sessionStorage.setItem(COMP_NAME, name);
+  }
+  public getName(): string {
+    return sessionStorage.getItem(COMP_NAME);
   }
   public getUserId(): string {
     return sessionStorage.getItem(USER_ID);

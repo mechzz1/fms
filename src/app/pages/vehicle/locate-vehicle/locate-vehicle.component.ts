@@ -28,7 +28,7 @@ export class LocateVehicleComponent implements OnInit, OnDestroy {
 
   ) {
     this.mySub = interval(2000).subscribe((func => {
-      this.getAllVehicles();
+      this.getVehicleLocation();
     }))
   }
 
@@ -43,8 +43,8 @@ export class LocateVehicleComponent implements OnInit, OnDestroy {
 
   }
   
-  getAllVehicles(){
-    this.Jarwis.getAllVehicles().subscribe(
+  getVehicleLocation(){
+    this.Jarwis.getVehicleLocation(this.vehicleId).subscribe(
       (data) => this.handleData(data, "success"),
       (error) => this.handleError(error)
     );
@@ -57,7 +57,7 @@ export class LocateVehicleComponent implements OnInit, OnDestroy {
     if(data.error){
       this.handleError(data);
     }else{
-      console.log(data);
+      console.log(data.data[0].vehicle_last_location.latitude );
       this.latitude = data.data[0].vehicle_last_location.latitude ;
       this.longitude = data.data[0].vehicle_last_location.longitude ;
   }

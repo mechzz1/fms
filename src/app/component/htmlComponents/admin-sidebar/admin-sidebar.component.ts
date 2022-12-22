@@ -17,6 +17,8 @@ export class AdminSidebarComponent implements OnInit {
   title = 'Dashboard';
   icon = 'fa fa-home fa-2x';
   userId;
+  name;
+
   constructor(public router: Router,
     private tokenStorage: TokenStorageService,
     private Jarwis: AuthService,
@@ -47,6 +49,9 @@ export class AdminSidebarComponent implements OnInit {
 
     })
     this.checked = true;
+    this.name = this.tokenStorage.getName();
+    console.log(this.name);
+
 
     this.userId = this.tokenStorage.getUserId();
     console.log(this.userId);
