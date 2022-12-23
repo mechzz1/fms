@@ -224,6 +224,21 @@ export class AuthService {
       httpOptionsSaved
     );
   }
+  public getDashboardData() {
+    const httpOptionsSaved = {
+      headers: new HttpHeaders({
+        Accept: "application/json",
+        "Access-Control-Allow-Origin": `${this.baseUrl}`,
+        "Authorization": "token " + this.tokenStorage.getToken(),
+
+      }),
+    };
+    return this.http.get<JwtResponse>(
+      `${this.baseUrl}/user/dashboard`,
+      httpOptionsSaved
+    );
+  }
+  
   public assignJob(data) {
     const httpOptionsSaved = {
       headers: new HttpHeaders({

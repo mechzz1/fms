@@ -50,9 +50,6 @@ export class AdminSidebarComponent implements OnInit {
     })
     this.checked = true;
     this.name = this.tokenStorage.getName();
-    console.log(this.name);
-
-
     this.userId = this.tokenStorage.getUserId();
     console.log(this.userId);
     this.getEmployeeData();

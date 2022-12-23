@@ -41,12 +41,7 @@ export class VehicleAllocationComponent implements OnInit {
       type: "text",
       edit: "false",
     },
-    {
-      field: "actions",
-      header: "Actions",
-      type: "editButton",
-      edit: "true",
-    },
+   
   ];
   tableInfo: TableInfo[] = [];
   display: boolean = false;

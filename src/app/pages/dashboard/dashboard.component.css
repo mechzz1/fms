@@ -5,3 +5,20 @@
       background-position: center;
       background-size: cover;
     }
+
+    .bg {
+      background-color: var(--sideBarBg);
+      border-radius: 20px;
+      padding: 20px;
+    }
+
+    .box{
+      /* height: 50px; */
+      /* border: 2px solid; */
+      padding-top: 40px;
+      padding-bottom: 40px;
+      border-radius: 10px;
+      /* box-shadow: 5px 10px #888888; */
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    }

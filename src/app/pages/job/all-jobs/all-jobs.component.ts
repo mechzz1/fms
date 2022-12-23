@@ -100,7 +100,16 @@ export class AllJobsComponent implements OnInit {
       obj.id = item.id;
       obj.pickup_location = item.pickup_location;
       obj.dropoff_location = item.dropoff_location;
-      obj.status = "pending";
+      if(item.job_status == '1'){
+
+        obj.status = "Pending";
+      }else if(item.job_status == '2'){
+        obj.status = "Inprogress";
+
+      }else{
+        obj.status = "Completed";
+
+      }
 
       obj.cnic = item.cnic;
 
